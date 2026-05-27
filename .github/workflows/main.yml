@@ -40,3 +40,12 @@ jobs:
       with:
         name: dist
         path: dist/
+
+     # 新增：部署到 GitHub Pages
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'  # 只在 main 分支部署
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        publish_branch: gh-pages  # 部署到 gh-pages 分支
