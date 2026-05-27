@@ -23,10 +23,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import GomokuBoard from './components/GomokuBoard.vue'
-import GameStatus from './components/GameStatus.vue'
-import { useGomoku } from './composables/useGomoku'
+import { computed } from "vue";
+import GomokuBoard from "./components/GomokuBoard.vue";
+import GameStatus from "./components/GameStatus.vue";
+import { useGomoku } from "./composables/useGomoku";
 
 const {
   board,
@@ -40,12 +40,12 @@ const {
   undo,
   reset,
   getWinLine,
-} = useGomoku()
+} = useGomoku();
 
-const winLine = computed(() => getWinLine())
+const winLine = computed(() => getWinLine());
 
 function handlePlace(row: number, col: number) {
-  placePiece(row, col)
+  placePiece(row, col);
 }
 </script>
 

@@ -13,7 +13,9 @@
         <span class="status__result">平局！</span>
       </template>
       <template v-else>
-        <span class="status__turn">当前轮到：</span>
+        <span class="status__turn">
+          当前轮到：
+        </span>
         <span
           class="status__player"
           :class="currentPlayer === 'black' ? 'label--black' : 'label--white'"
