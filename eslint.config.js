@@ -15,7 +15,7 @@ export default [
             parserOptions: {
                 ecmaVersion: 'latest',
                 sourceType: 'module',
-                project: './tsconfig.json'  // 可选：启用类型检查
+                project: './tsconfig.eslint.json',  // 指向新文件
             },
             globals: {
                 ...globals.browser,

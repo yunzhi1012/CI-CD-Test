@@ -1,0 +1,10 @@
+// tsconfig.eslint.json
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",  // 添加 .vue 文件
+    "src/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
