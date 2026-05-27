@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 
-# 添加 Pages 权限
+# 添加 Pages 权限1
 permissions:
   contents: read
   pages: write
