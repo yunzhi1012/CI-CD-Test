@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx",
     "lint:fix": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "type-check": "vue-tsc --noEmit",
-    "test:unit": "vitest run"
+    "test:unit": "vitest run",
+    "test:unit:ci": "vitest run --passWithNoTests"
   },
   "dependencies": {
     "vue": "^3.5.34"
