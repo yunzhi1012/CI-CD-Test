@@ -9,18 +9,17 @@ export default [
     js.configs.recommended,
     ...vue.configs['flat/recommended'],
     {
-        files: ['**/*.{js,ts,vue}'],
+        files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
         languageOptions: {
-            parser: tsParser,  // 使用 TypeScript 解析器
+            parser: tsParser,  // 关键：这里要指定 parser
             parserOptions: {
                 ecmaVersion: 'latest',
                 sourceType: 'module',
-                extraFileExtensions: ['.vue']
+                project: './tsconfig.json'  // 可选：启用类型检查
             },
             globals: {
                 ...globals.browser,
-                ...globals.node,
-                ...globals.es2021
+                ...globals.node
             }
         },
         plugins: {
@@ -28,16 +27,13 @@ export default [
         },
         rules: {
             ...tsPlugin.configs.recommended.rules,
-            'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-            'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-            'vue/multi-word-component-names': 'off'
+            '@typescript-eslint/no-explicit-any': 'warn'
         }
     },
     {
-        files: ['**/*.ts', '**/*.tsx'],
-        rules: {
-            '@typescript-eslint/no-explicit-any': 'warn',
-            '@typescript-eslint/explicit-function-return-type': 'off'
+        files: ['**/*.vue'],
+        languageOptions: {
+            parser: tsParser  // .vue 文件也需要 TypeScript 解析器
         }
     }
 ];
