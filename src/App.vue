@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h1 class="app__title">
-      五子棋
+      五子棋1
     </h1>
     <GameStatus
       :current-player="currentPlayer"
