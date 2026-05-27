@@ -1,6 +1,8 @@
 <template>
   <div class="app">
-    <h1 class="app__title">五子棋</h1>
+    <h1 class="app__title">
+      五子棋
+    </h1>
     <GameStatus
       :current-player="currentPlayer"
       :winner="winner"

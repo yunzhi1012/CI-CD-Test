@@ -10,8 +10,15 @@
     }"
     @click="$emit('place', row, col)"
   >
-    <div v-if="isStarPoint && !cell" class="star-point" />
-    <div v-if="cell" class="piece" :class="`piece--${cell}`" />
+    <div
+      v-if="isStarPoint && !cell"
+      class="star-point"
+    />
+    <div
+      v-if="cell"
+      class="piece"
+      :class="`piece--${cell}`"
+    />
     <div
       v-else-if="!gameOver"
       class="piece piece--preview"

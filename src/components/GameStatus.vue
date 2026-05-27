@@ -4,7 +4,7 @@
       <template v-if="winner">
         <span class="status__result">🎉
           <span :class="winner === 'black' ? 'label--black' : 'label--white'">
-            {{ winner === 'black' ? '黑棋' : '白棋' }}
+            {{ winner === "black" ? "黑棋" : "白棋" }}
           </span>
           获胜！
         </span>
@@ -18,16 +18,23 @@
           class="status__player"
           :class="currentPlayer === 'black' ? 'label--black' : 'label--white'"
         >
-          {{ currentPlayer === 'black' ? '黑棋' : '白棋' }}
+          {{ currentPlayer === "black" ? "黑棋" : "白棋" }}
         </span>
       </template>
     </div>
 
     <div class="status__actions">
-      <button class="btn btn--undo" :disabled="history.length === 0" @click="$emit('undo')">
+      <button
+        class="btn btn--undo"
+        :disabled="history.length === 0"
+        @click="$emit('undo')"
+      >
         悔棋
       </button>
-      <button class="btn btn--reset" @click="$emit('reset')">
+      <button
+        class="btn btn--reset"
+        @click="$emit('reset')"
+      >
         重新开始
       </button>
     </div>
@@ -35,19 +42,19 @@
 </template>
 
 <script setup lang="ts">
-import type { Player } from '../types/game'
+import type { Player } from "../types/game";
 
 defineProps<{
-  currentPlayer: Player
-  winner: Player | null
-  isDraw: boolean
-  history: { length: number }
-}>()
+  currentPlayer: Player;
+  winner: Player | null;
+  isDraw: boolean;
+  history: { length: number };
+}>();
 
 defineEmits<{
-  undo: []
-  reset: []
-}>()
+  undo: [];
+  reset: [];
+}>();
 </script>
 
 <style lang="scss" scoped>
